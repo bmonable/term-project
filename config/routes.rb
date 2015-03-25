@@ -1,7 +1,7 @@
 TermProject::Application.routes.draw do
-  resources :rooms
-
-  root :to => redirect('/rooms')
+  resources :rooms 
+  root :to => "rooms#index"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
