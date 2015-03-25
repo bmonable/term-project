@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Rnumber:
+  = @room.rnumber
+%p
+  %b Build:
+  = @room.build
+%p
+  %b Rdate:
+  = @room.rdate
+%p
+  %b Rtime:
+  = @room.rtime
+%p
+  %b Proc1:
+  = @room.proc1
+%p
+  %b Proc2:
+  = @room.proc2
+
+= link_to 'Edit', edit_room_path(@room)
+\|
+= link_to 'Back', rooms_path
