@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @proctor.pname
+%p
+  %b Prof Or Staff:
+  = @proctor.pors
+%p
+  %b Telephone:
+  = @proctor.tel
+%p
+  %b E-mail:
+  = @proctor.email
+
+= link_to 'Edit', edit_proctor_path(@proctor)
+\|
+= link_to 'Back', proctors_path

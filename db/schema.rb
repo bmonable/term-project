@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150325133057) do
+ActiveRecord::Schema.define(:version => 20150326162202) do
+
+  create_table "proctors", :force => true do |t|
+    t.string   "pname"
+    t.string   "pors"
+    t.string   "tel"
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "rooms", :force => true do |t|
     t.string   "rnumber"

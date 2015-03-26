@@ -7,22 +7,22 @@
           %li= msg
 
   .field
-    = f.label :rnumber
+    = f.label :'Room Number'
     = f.text_field :rnumber
   .field
-    = f.label :build
+    = f.label :building
     = f.text_field :build
   .field
-    = f.label :rdate
+    = f.label :date
     = f.text_field :rdate
   .field
-    = f.label :rtime
+    = f.label :time
     = f.text_field :rtime
   .field
-    = f.label :proc1
+    = f.label :'proctor 1'
     = f.text_field :proc1
   .field
-    = f.label :proc2
+    = f.label :'proctor 2'
     = f.text_field :proc2
   .actions
     = f.submit 'Save'

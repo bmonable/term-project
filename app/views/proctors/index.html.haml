@@ -1,0 +1,25 @@
+%h1 Listing proctors
+
+%table
+  %tr
+    %th Name
+    %th Prof Or Staff
+    %th Telephone
+    %th E-mail
+    %th
+    %th
+    %th
+
+  - @proctors.each do |proctor|
+    %tr
+      %td= proctor.pname
+      %td= proctor.pors
+      %td= proctor.tel
+      %td= proctor.email
+      %td= link_to 'Show', proctor
+      %td= link_to 'Edit', edit_proctor_path(proctor)
+      %td= link_to 'Delete', proctor, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'Add Proctor', new_proctor_path

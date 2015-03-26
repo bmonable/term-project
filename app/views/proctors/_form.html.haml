@@ -1,0 +1,22 @@
+= form_for @proctor do |f|
+  - if @proctor.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@proctor.errors.count, "error")} prohibited this proctor from being saved:"
+      %ul
+        - @proctor.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :pname
+  .field
+    = f.label :'prof or staff'
+    = f.text_field :pors
+  .field
+    = f.label :telephone
+    = f.text_field :tel
+  .field
+    = f.label :email
+    = f.text_field :email
+  .actions
+    = f.submit 'Save'
