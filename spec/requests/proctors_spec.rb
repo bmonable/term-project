@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 RSpec.describe "Proctors", :type => :request do
   describe "GET /proctors" do
