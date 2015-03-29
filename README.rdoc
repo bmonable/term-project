@@ -1,3 +1,17 @@
+นายวุฒิพงษ์ อธิมติชัยกุล 5410530017
+
+นายณชาธร เศวตรแสงจันทร์ 5410610272 
+
+นายกิตตินันท์ บุญยืน 5410612484  
+
+นายทศวรรษ ฟูเกียรติสุทธิ์ 5410611957  
+
+Github => https://github.com/bmonable/term-project
+
+Pivotol => https://www.pivotaltracker.com/n/projects/1300674
+
+
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create

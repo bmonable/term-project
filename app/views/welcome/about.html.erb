@@ -18,93 +18,99 @@
 
 
 <h3> Requirements</h3>
-   &nbsp&nbsp&nbsp&nbsp1)บุคคลทั่วไปสามารถใช้ชื่อผู้คุมสอบในการค้นหา ห้อง วัน และเวลา ที่ผู้คุมสอบท่านนั้นๆได้รับมอบหมายในการคุมสอบ
-<br>	&nbsp&nbsp&nbsp&nbsp2)บุคคลทั่วไปสามารถใช้ชื่อห้องในการค้นหา ชื่อผู้คุมสอบ วัน และเวลา ที่มีการใช้ห้องนั้นๆในการสอบ                            
-<br>	&nbsp&nbsp&nbsp&nbsp3)มีการตรวจสอบสิทธิ์ของผู้ดูแลระบบ โดยผ่านการยืนยันตัวตนเพื่อเข้าสู่ระบบ โดยผู้ดูแลระบบมีสิทธิ์ที่จะเพิ่มข้อมูลผู้คุมสอบ แก้ไขข้อมูลผู้คุมสอบ ลบข้อมูลผู้คุมสอบ และมีการจัดผู้คุมสอบแบบอัตโนมัติ ซึ่งจะสามารถเปลี่ยนแปลงได้ในภายหลัง
-<br>	&nbsp&nbsp&nbsp&nbsp4)เมื่อผู้คุมสอบทำงานเสร็จสิ้น สามารถออกจากระบบได้  
+   &nbsp&nbsp&nbsp&nbsp 1) บุคคลทั่วไปสามารถใช้ชื่อผู้คุมสอบในการค้นหา ห้อง วัน และเวลา ที่ผู้คุมสอบท่านนั้นๆได้รับมอบหมายในการคุมสอบ
+<br>	&nbsp&nbsp&nbsp&nbsp 2) บุคคลทั่วไปสามารถใช้ชื่อห้องในการค้นหา ชื่อผู้คุมสอบ วัน และเวลา ที่มีการใช้ห้องนั้นๆในการสอบ                            
+<br>	&nbsp&nbsp&nbsp&nbsp 3) มีการตรวจสอบสิทธิ์ของผู้ดูแลระบบ โดยผ่านการยืนยันตัวตนเพื่อเข้าสู่ระบบ โดยผู้ดูแลระบบมีสิทธิ์ที่จะเพิ่มข้อมูลผู้คุมสอบ แก้ไขข้อมูลผู้คุมสอบ ลบข้อมูลผู้คุมสอบ และมีการจัดผู้คุมสอบแบบอัตโนมัติ ซึ่งจะสามารถเปลี่ยนแปลงได้ในภายหลัง
+<br>	&nbsp&nbsp&nbsp&nbsp 4) เมื่อผู้คุมสอบทำงานเสร็จสิ้น สามารถออกจากระบบได้  
 
 
 
 <h3> User Stories</h3>
 
+&nbsp&nbsp&nbsp&nbsp 1. Feature: Display proctor’s details 
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  As a proctor manager
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	So that I can see all the proctor’s details and manage them 
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	I want to be able to manage any proctor's details 
 
-&nbsp&nbsp&nbsp&nbsp 1) Feature :  Display list of rooms and time filtered by proctor’s name
-<br>    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp     As a rush student who wants to meet a proctor
+<br>
+<br>&nbsp&nbsp&nbsp&nbsp 2. Feature: add proctor’s details 
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  As a proctor manager
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	So that I can create one or more proctor and details 
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	I want to be able to add one or more proctor into the table
+
+
+<br>
+<br>&nbsp&nbsp&nbsp&nbsp 3. Feature: edit proctor’s details 
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  As a proctor manager
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	So that I can correct proctor's details when something is wrong
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	I want to be able to edit any proctor's details 
+
+
+<br>
+<br>&nbsp&nbsp&nbsp&nbsp 4. Feature: delete proctor’s details 
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  As a proctor manager
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	So that I can remove one or more proctor and details 
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	I want to be able to delete one or more proctor form the table 
+
+<br>
+<br>    &nbsp&nbsp&nbsp&nbsp 5. Feature :  Display list of rooms and time filtered by proctor’s name
+<br>    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp     As a proctor manager
 <br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp     So that I can quickly find all rooms with the same proctor
 <br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp     I want to see all rooms that one proctor takes charge
 
 <br>
-<br>&nbsp&nbsp&nbsp&nbsp 2. Feature: Display list of time and proctors filtered by room
-<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	As a concerned janitor
+<br>&nbsp&nbsp&nbsp&nbsp 6. Feature: Display list of time and proctors filtered by room
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	As a proctor manager
 <br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	So that I can quickly find the time and proctors for that room and planning to rearrange it
 <br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	I want see all the details about a room during exam period
 
+
 <br>
-<br>    &nbsp&nbsp&nbsp&nbsp 3. Feature: Login to the system by Administration’s account
-<br>    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	As a administrator of proctor management system
-<br>    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	So that I can manage the system 
-<br>    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	I want to be able to login with my account 
+<br>&nbsp&nbsp&nbsp&nbsp 7. Feature: Automatically assign proctors to available rooms and time 
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp     As a proctor manager
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp     So that I can see all the rooms with proctors take change
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp     I want to be able to Automatically assign proctors to available rooms and time 
+
 <br>
-<br>&nbsp&nbsp&nbsp&nbsp 4. Feature: Display proctor’s details 
-<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp     As a administrator of proctor management system
-<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	So that I can see all the proctor’s details and manage them 
-<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	I want to be able to add, edit and delete proctor’s details 
-<br>		
- <br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  Scenario : add proctor and his or her details 
- <br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  Scenario : edit proctor and his or her details		
- <br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  Scenario : delete proctor and his or her details
+<br>&nbsp&nbsp&nbsp&nbsp 8. Feature: edit proctors after added to available rooms and time 
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp     As a proctor manager
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp     So that I can change room and time that proctors are in charge  
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp     I want to be able to edit room and time for proctors 
 	
-<br>
-<br>&nbsp&nbsp&nbsp&nbsp 5. Feature: Automatically assign and edit proctors to available rooms and time 
-<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp     As a administrator of proctor management system
-<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp     So that I can share list of rooms, time, and proctors to other general user
-<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp     I want to be able to Automatically assign and edit proctors to available rooms and time 
-<br>	
- <br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp    Scenario : edit proctor after automatically assign proctors to available rooms and time
-<br>
-<br>&nbsp&nbsp&nbsp&nbsp 6. Feature: Logout of the system 
-<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp     As a administrator of proctor management system
-<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	So that I can destroy my session 
-<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	I want to be able to logout with my account
-<br>
+
+
 
 
 <h3> lo-fi mockups</h3>
-&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/term-project/app/assets/images/1.jpg?_c9_id=livepreview1&_c9_host=https://ide.c9.io">
+&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/bmon/term-project/app/assets/images/l1.jpg?_c9_id=livepreview1&_c9_host=https://ide.c9.io">
 <br>_________________________________________________________________________________________________________________________________________________________________________
-<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/term-project/app/assets/images/2.jpg?_c9_id=livepreview0&_c9_host=https://ide.c9.io">
+<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/bmon/term-project/app/assets/images/l3.jpg?_c9_id=livepreview0&_c9_host=https://ide.c9.io">
 <br>_________________________________________________________________________________________________________________________________________________________________________
-<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/term-project/app/assets/images/3.jpg?_c9_id=livepreview2&_c9_host=https://ide.c9.io">
+<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/bmon/term-project/app/assets/images/l2.jpg?_c9_id=livepreview2&_c9_host=https://ide.c9.io">
 <br>_________________________________________________________________________________________________________________________________________________________________________
-<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/term-project/app/assets/images/4.jpg?_c9_id=livepreview3&_c9_host=https://ide.c9.io">
+<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/bmon/term-project/app/assets/images/l4.jpg?_c9_id=livepreview3&_c9_host=https://ide.c9.io">
 <br>_________________________________________________________________________________________________________________________________________________________________________
-<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/term-project/app/assets/images/5.jpg?_c9_id=livepreview4&_c9_host=https://ide.c9.io">
+<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/bmon/term-project/app/assets/images/l5.jpg?_c9_id=livepreview4&_c9_host=https://ide.c9.io">
 <br>_________________________________________________________________________________________________________________________________________________________________________
-<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/term-project/app/assets/images/6.jpg?_c9_id=livepreview4&_c9_host=https://ide.c9.io">
+<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/bmon/term-project/app/assets/images/l6.jpg?_c9_id=livepreview4&_c9_host=https://ide.c9.io">
 <br>_________________________________________________________________________________________________________________________________________________________________________
-<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/term-project/app/assets/images/7.jpg?_c9_id=livepreview4&_c9_host=https://ide.c9.io">
-<br>_________________________________________________________________________________________________________________________________________________________________________
-<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/term-project/app/assets/images/8.jpg?_c9_id=livepreview4&_c9_host=https://ide.c9.io">
+<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/bmon/term-project/app/assets/images/l7.jpg?_c9_id=livepreview4&_c9_host=https://ide.c9.io">
 <br>_________________________________________________________________________________________________________________________________________________________________________
 <br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/term-project/app/assets/images/9.jpg?_c9_id=livepreview4&_c9_host=https://ide.c9.io">
 <br>_________________________________________________________________________________________________________________________________________________________________________
 
 <h3>  Story Board</h3>
-<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/term-project/app/assets/images/By_name.jpg?_c9_id=livepreview2&_c9_host=https://ide.c9.io">
+<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/bmon/term-project/app/assets/images/s2.jpg?_c9_id=livepreview2&_c9_host=https://ide.c9.io">
 <br>_________________________________________________________________________________________________________________________________________________________________________
-<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/term-project/app/assets/images/By_room.jpg?_c9_id=livepreview3&_c9_host=https://ide.c9.io">
+<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/bmon/term-project/app/assets/images/s1.jpg?_c9_id=livepreview3&_c9_host=https://ide.c9.io">
 <br>_________________________________________________________________________________________________________________________________________________________________________
-<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/term-project/app/assets/images/Login.jpg?_c9_id=livepreview8&_c9_host=https://ide.c9.io">
+<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/bmon/term-project/app/assets/images/s3.jpg?_c9_id=livepreview8&_c9_host=https://ide.c9.io">
 <br>_________________________________________________________________________________________________________________________________________________________________________
-<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/term-project/app/assets/images/Afterlog.jpg?_c9_id=livepreview1&_c9_host=https://ide.c9.io">
+<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/bmon/term-project/app/assets/images/s4.jpg?_c9_id=livepreview1&_c9_host=https://ide.c9.io">
 <br>_________________________________________________________________________________________________________________________________________________________________________
-<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/term-project/app/assets/images/info.jpg?_c9_id=livepreview7&_c9_host=https://ide.c9.io">
+<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/bmon/term-project/app/assets/images/s5.jpg?_c9_id=livepreview7&_c9_host=https://ide.c9.io">
 <br>_________________________________________________________________________________________________________________________________________________________________________
-<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/term-project/app/assets/images/addinfo.jpg?_c9_id=livepreview0&_c9_host=https://ide.c9.io">
-<br>_________________________________________________________________________________________________________________________________________________________________________
-<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/term-project/app/assets/images/edit.jpg?_c9_id=livepreview4&_c9_host=https://ide.c9.io">
-<br>_________________________________________________________________________________________________________________________________________________________________________
-<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/term-project/app/assets/images/Edit_to_room.jpg?_c9_id=livepreview5&_c9_host=https://ide.c9.io">
+<br>&nbsp&nbsp&nbsp&nbsp<img src="https://preview.c9.io/bmon/cn320-5410610272/bmon/term-project/app/assets/images/s6.jpg?_c9_id=livepreview0&_c9_host=https://ide.c9.io">
 <br>_________________________________________________________________________________________________________________________________________________________________________
 
 
@@ -119,17 +125,17 @@
 <br>
 <h3> Interations 1</h3>
 
-
-&nbsp&nbsp&nbsp&nbsp 1) Feature :  Display list of rooms and time filtered by proctor’s name
-<br>    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp     As a rush student who wants to meet a proctor
-<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp     So that I can quickly find all rooms with the same proctor
-<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp     I want to see all rooms that one proctor takes charge
+&nbsp&nbsp&nbsp&nbsp 1. Feature: Display proctor’s details 
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  As a proctor manager
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	So that I can see all the proctor’s details and manage them 
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	I want to be able to manage any proctor's details 
 
 <br>
-<br>&nbsp&nbsp&nbsp&nbsp 2. Feature: Display list of time and proctors filtered by room
-<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	As a concerned janitor
-<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	So that I can quickly find the time and proctors for that room and planning to rearrange it
-<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	I want see all the details about a room during exam period
+<br>&nbsp&nbsp&nbsp&nbsp 2. Feature: add proctor’s details 
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  As a proctor manager
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	So that I can create one or more proctor and details 
+<br>     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	I want to be able to add one or more proctor into the table
+
 
 
 
@@ -141,7 +147,7 @@
 <br>
 
 <h3>  Link to Github</h3>
-<a href="https://github.com/5410611957/term-project">https://github.com/5410611957/term-project</a>
+<a href="https://github.com/bmonable/term-project">https://github.com/bmonable/term-project</a>
 
 <br><br><br><br><br><br><br>
 
