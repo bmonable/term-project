@@ -34,7 +34,7 @@ class ProctorsController < ApplicationController
 
   # GET /proctors/1/edit
   def edit
-    @proctor = Proctor.find(params[:id])
+    #@proctor = Proctor.find(params[:id])
   end
 
   # POST /proctors
@@ -56,28 +56,28 @@ class ProctorsController < ApplicationController
   # PUT /proctors/1
   # PUT /proctors/1.json
   def update
-    @proctor = Proctor.find(params[:id])
+   # @proctor = Proctor.find(params[:id])
 
-    respond_to do |format|
-      if @proctor.update_attributes(params[:proctor])
-        format.html { redirect_to @proctor, notice: 'Proctor was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @proctor.errors, status: :unprocessable_entity }
-      end
-    end
+  #  respond_to do |format|
+   #   if @proctor.update_attributes(params[:proctor])
+    #    format.html { redirect_to @proctor, notice: 'Proctor was successfully updated.' }
+     #   format.json { head :no_content }
+    #  else
+     #   format.html { render action: "edit" }
+      #  format.json { render json: @proctor.errors, status: :unprocessable_entity }
+  #    end
+  # end
   end
 
   # DELETE /proctors/1
   # DELETE /proctors/1.json
   def destroy
-    @proctor = Proctor.find(params[:id])
-    @proctor.destroy
+  #  @proctor = Proctor.find(params[:id])
+  #  @proctor.destroy
 
-    respond_to do |format|
-      format.html { redirect_to proctors_url }
-      format.json { head :no_content }
-    end
+  #  respond_to do |format|
+  #    format.html { redirect_to proctors_url }
+  #    format.json { head :no_content }
+  #  end
   end
 end

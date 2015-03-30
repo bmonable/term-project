@@ -55,13 +55,7 @@ RSpec.describe ProctorsController, :type => :controller do
     end
   end
 
-  describe "GET #edit" do
-    it "assigns the requested proctor as @proctor" do
-      proctor = Proctor.create! valid_attributes
-      get :edit, {:id => proctor.to_param}, valid_session
-      expect(assigns(:proctor)).to eq(proctor)
-    end
-  end
+ 
 
   describe "POST #create" do
     context "with valid params" do
@@ -96,57 +90,10 @@ RSpec.describe ProctorsController, :type => :controller do
     end
   end
 
-  describe "PUT #update" do
-    context "with valid params" do
-      let(:new_attributes) {}
+ 
 
-      it "updates the requested proctor" do
-        proctor = Proctor.create! valid_attributes
-        put :update, {:id => proctor.to_param, :proctor => new_attributes}, valid_session
-        proctor.reload
-      end
+ 
 
-      it "assigns the requested proctor as @proctor" do
-        proctor = Proctor.create! valid_attributes
-        put :update, {:id => proctor.to_param, :proctor => valid_attributes}, valid_session
-        expect(assigns(:proctor)).to eq(proctor)
-      end
 
-      it "redirects to the proctor" do
-        proctor = Proctor.create! valid_attributes
-        put :update, {:id => proctor.to_param, :proctor => valid_attributes}, valid_session
-        expect(response).to redirect_to(proctor)
-      end
-    end
-
-    context "with invalid params" do
-      it "assigns the proctor as @proctor" do
-        proctor = Proctor.create! valid_attributes
-        put :update, {:id => proctor.to_param, :proctor => invalid_attributes}, valid_session
-        expect(assigns(:proctor)).to eq(proctor)
-      end
-
-#      it "re-renders the 'edit' template" do
-#        proctor = Proctor.create! valid_attributes
-#        put :update, {:id => proctor.to_param, :proctor => invalid_attributes}, valid_session
-#        expect(response).to render_template("edit")
-#      end
-    end
-  end
-
-  describe "DELETE #destroy" do
-    it "destroys the requested proctor" do
-      proctor = Proctor.create! valid_attributes
-      expect {
-        delete :destroy, {:id => proctor.to_param}, valid_session
-      }.to change(Proctor, :count).by(-1)
-    end
-
-    it "redirects to the proctors list" do
-      proctor = Proctor.create! valid_attributes
-      delete :destroy, {:id => proctor.to_param}, valid_session
-      expect(response).to redirect_to(proctors_url)
-    end
-  end
 
 end
