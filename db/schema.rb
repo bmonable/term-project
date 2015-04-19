@@ -14,8 +14,8 @@
 ActiveRecord::Schema.define(:version => 20150326162202) do
 
   create_table "proctors", :force => true do |t|
-    t.string   "pname"
-    t.string   "pors"
+    t.string   "name"
+    t.string   "position"
     t.string   "tel"
     t.string   "email"
     t.datetime "created_at", :null => false
@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(:version => 20150326162202) do
   end
 
   create_table "rooms", :force => true do |t|
-    t.string   "rnumber"
+    t.string   "number"
     t.string   "build"
-    t.string   "rdate"
-    t.string   "rtime"
-    t.string   "proc1"
-    t.string   "proc2"
+    t.string   "date"
+    t.string   "time"
+    t.string   "proctor1"
+    t.string   "proctor2"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

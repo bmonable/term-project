@@ -23,7 +23,9 @@ RSpec.describe ProctorsController, :type => :controller do
   # This should return the minimal set of attributes required to create a valid
   # Proctor. As you add validations to Proctor, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {}
+
+
+  let(:valid_attributes) { { "name" => "1" , "position" => "1", "tel" => "1", "email" => "1" } }
 
   let(:invalid_attributes) {}
 
@@ -32,7 +34,30 @@ RSpec.describe ProctorsController, :type => :controller do
   # ProctorsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
-  describe "GET #index" do
+  def mock_proctor(stubs={})
+      @mock_proctor ||= mock_model(Proctor, stubs).as_null_object
+  end
+  
+  describe "#create" do
+    before(:each) do
+        @attr = { :name => "1", :position => "1", :tel => "1", :email => "1" }
+    end
+    it "should create a new proctor" do
+        lambda do
+          post :create, :proctor => @attr
+          flash[:notice].should_not be_nil
+        end.should change(Proctor, :count).by(1)
+    end
+    it "should redirect to the proctor show page and show success message" do
+      post :create, :proctor => @attr
+      flash[:notice].should =~ /Proctor was successfully created./i
+      response.should redirect_to proctor_path(assigns(:proctor))
+    end
+  end
+
+
+    
+ describe "GET #index" do
     it "assigns all proctors as @proctors" do
       proctor = Proctor.create! valid_attributes
       get :index, {}, valid_session
@@ -40,6 +65,15 @@ RSpec.describe ProctorsController, :type => :controller do
     end
   end
 
+  
+#  describe "GET #index" do
+#    it "assigns all proctors as @proctors" do
+#      proctor = Proctor.create! valid_attributes
+#      get :index, {}, valid_session
+#      expect(assigns(:proctors)).to eq([proctor])
+#    end
+#  end
+  
   describe "GET #show" do
     it "assigns the requested proctor as @proctor" do
       proctor = Proctor.create! valid_attributes
@@ -47,6 +81,15 @@ RSpec.describe ProctorsController, :type => :controller do
       expect(assigns(:proctor)).to eq(proctor)
     end
   end
+  
+
+#  describe "GET #show" do
+#    it "assigns the requested proctor as @proctor" do
+#      proctor = Proctor.create! valid_attributes
+#      get :show, {:id => proctor.to_param}, valid_session
+#      expect(assigns(:proctor)).to eq(proctor)
+#    end
+#  end
 
   describe "GET #new" do
     it "assigns a new proctor as @proctor" do
@@ -54,43 +97,63 @@ RSpec.describe ProctorsController, :type => :controller do
       expect(assigns(:proctor)).to be_a_new(Proctor)
     end
   end
-
- 
-
-  describe "POST #create" do
-    context "with valid params" do
-      it "creates a new Proctor" do
-        expect {
-          post :create, {:proctor => valid_attributes}, valid_session
-        }.to change(Proctor, :count).by(1)
-      end
-
-      it "assigns a newly created proctor as @proctor" do
-        post :create, {:proctor => valid_attributes}, valid_session
-        expect(assigns(:proctor)).to be_a(Proctor)
-        expect(assigns(:proctor)).to be_persisted
-      end
-
-      it "redirects to the created proctor" do
-        post :create, {:proctor => valid_attributes}, valid_session
-        expect(response).to redirect_to(Proctor.last)
-      end
-    end
-
-    context "with invalid params" do
-#      it "assigns a newly created but unsaved proctor as @proctor" do
-#        post :create, {:proctor => invalid_attributes}, valid_session
-#        expect(assigns(:proctor)).to be_a_new(Proctor)
-#      end
-
-#      it "re-renders the 'new' template" do
-#        post :create, {:proctor => invalid_attributes}, valid_session
-#        expect(response).to render_template("new")
-#      end
+  
+  describe "GET #edit" do
+    it "assigns the requested proctor as @proctor" do
+      proctor = Proctor.create! valid_attributes
+      get :edit, {:id => proctor.to_param}, valid_session
+      expect(assigns(:proctor)).to eq(proctor)
     end
   end
+  
+  
+  describe "DELETE #destroy" do
+    it "destroys the requested proctor" do
+      proctor = Proctor.create! valid_attributes
+      expect {
+        delete :destroy, {:id => proctor.to_param}, valid_session
+      }.to change(Proctor, :count).by(-1)
+    end
 
- 
+    it "redirects to the proctors list" do
+      proctor = Proctor.create! valid_attributes
+      delete :destroy, {:id => proctor.to_param}, valid_session
+      expect(response).to redirect_to(proctors_url)
+    end
+  end
+  
+  describe "PUT #update" do
+     
+    context "with valid params" do
+      let(:new_attributes) {
+         { "name" => "2" , "position" => "2", "tel" => "2", "email" => "2" }
+      }
+
+      it "updates the requested proctor" do
+        proctor = Proctor.create! valid_attributes
+        put :update, {:id => proctor.to_param, :proctor => new_attributes}, valid_session
+        proctor.reload
+        flash[:notice].should =~ /Proctor was successfully updated./i
+        
+      end
+
+      it "assigns the requested proctor as @proctor" do
+        proctor = Proctor.create! valid_attributes
+        put :update, {:id => proctor.to_param, :proctor => valid_attributes}, valid_session
+        expect(assigns(:proctor)).to eq(proctor)
+      end
+
+      it "redirects to the proctor" do
+        proctor = Proctor.create! valid_attributes
+        put :update, {:id => proctor.to_param, :proctor => valid_attributes}, valid_session
+        expect(response).to redirect_to(proctor)
+      end
+    end
+
+
+  end
+  
+
 
  
 

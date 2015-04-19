@@ -3,8 +3,8 @@ require 'spec_helper'
 RSpec.describe "proctors/new", :type => :view do
   before(:each) do
     assign(:proctor, Proctor.new(
-      :pname => "MyString",
-      :pors => "MyString",
+      :name => "MyString",
+      :position => "MyString",
       :tel => "MyString",
       :email => "MyString"
     ))
@@ -15,9 +15,9 @@ RSpec.describe "proctors/new", :type => :view do
 
     assert_select "form[action=?][method=?]", proctors_path, "post" do
 
-      assert_select "input#proctor_pname[name=?]", "proctor[pname]"
+      assert_select "input#proctor_name[name=?]", "proctor[name]"
 
-      assert_select "input#proctor_pors[name=?]", "proctor[pors]"
+      assert_select "input#proctor_position[name=?]", "proctor[position]"
 
       assert_select "input#proctor_tel[name=?]", "proctor[tel]"
 

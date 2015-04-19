@@ -29,3 +29,7 @@ end
 gem 'jquery-rails'
 gem 'haml'
 gem 'haml-rails'
+
+gem 'factory_girl'
+
+gem 'bootstrap-sass', '2.3.1.0'

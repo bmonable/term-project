@@ -3,22 +3,22 @@ require 'spec_helper'
 RSpec.describe "rooms/show", :type => :view do
   before(:each) do
     @room = assign(:room, Room.create!(
-      :rnumber => "Rnumber",
+      :number => "Number",
       :build => "Build",
-      :rdate => "Rdate",
-      :rtime => "Rtime",
-      :proc1 => "Proc1",
-      :proc2 => "Proc2"
+      :date => "Date",
+      :time => "Time",
+      :proctor1 => "Proctor1",
+      :proctor2 => "Proctor2"
     ))
   end
 
   it "renders attributes in <p>" do
     render
-    expect(rendered).to match(/Rnumber/)
+    expect(rendered).to match(/Number/)
     expect(rendered).to match(/Build/)
-    expect(rendered).to match(/Rdate/)
-    expect(rendered).to match(/Rtime/)
-    expect(rendered).to match(/Proc1/)
-    expect(rendered).to match(/Proc2/)
+    expect(rendered).to match(/Date/)
+    expect(rendered).to match(/Time/)
+    expect(rendered).to match(/Proctor1/)
+    expect(rendered).to match(/Proctor2/)
   end
 end

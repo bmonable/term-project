@@ -1,6 +1,10 @@
 %h1 Proctors
 
-%table
+%div{class:'media'}
+  
+  %div{class:"media-body"}
+
+%table{class:"table table-hover"}
   %tr
     %th Name
     %th Position
@@ -12,8 +16,8 @@
 
   - @proctors.each do |proctor|
     %tr
-      %td= proctor.pname
-      %td= proctor.pors
+      %td= proctor.name
+      %td= proctor.position
       %td= proctor.tel
       %td= proctor.email
       %td= link_to 'Show', proctor

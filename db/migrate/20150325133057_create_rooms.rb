@@ -1,12 +1,12 @@
 class CreateRooms < ActiveRecord::Migration
   def change
     create_table :rooms do |t|
-      t.string :rnumber
+      t.string :number
       t.string :build
-      t.string :rdate
-      t.string :rtime
-      t.string :proc1
-      t.string :proc2
+      t.string :date
+      t.string :time
+      t.string :proctor1
+      t.string :proctor2
 
       t.timestamps
     end

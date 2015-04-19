@@ -1,25 +1,7 @@
 %h1 Add proctor
 
-
-= form_tag proctors_path do
-
- = label :proctor, :pname, 'Name'
- %br= text_field :proctor, 'pname' 
- 
- = label :proctor, :pors, 'Position'
- %br= text_field :proctor, 'pors'
- 
- = label :proctor, :tel, 'Telephone'
- %br= text_field :proctor, 'tel'
- 
- = label :proctor, :email, 'Email'
- %br= text_field :proctor, 'email'
- 
- = submit_tag 'Save'
-
-
+= render 'form'
 
 
 
 = link_to 'Back', proctors_path
-

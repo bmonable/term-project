@@ -14,12 +14,12 @@
 
   - @rooms.each do |room|
     %tr
-      %td= room.rnumber
+      %td= room.number
       %td= room.build
-      %td= room.rdate
-      %td= room.rtime
-      %td= room.proc1
-      %td= room.proc2
+      %td= room.date
+      %td= room.time
+      %td= room.proctor1
+      %td= room.proctor2
       %td= link_to 'Show', room
       %td= link_to 'Edit', edit_room_path(room)
      
