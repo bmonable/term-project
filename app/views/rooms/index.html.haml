@@ -1,6 +1,26 @@
 %h1 Rooms
 
-%table
+  
+  
+= form_tag rooms_path, method: 'get' do
+  = text_field_tag :search, params[:search]
+  = submit_tag "Search By Proctor", :name => nil
+
+= form_tag rooms_path, method: 'get' do
+  = text_field_tag :searchroom, params[:searchpro]
+  = submit_tag "Search By Room", :name => nil
+
+- if @rooms.each do |room| 
+  - # code or partial to display the message 
+- end.empty? 
+  There is no room stored on database
+  
+  
+%div{class:'media'}
+  
+  %div{class:"media-body"}
+
+%table{class:"table table-hover"}
   %tr
     %th Room Number
     %th Building
