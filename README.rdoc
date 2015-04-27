@@ -10,7 +10,7 @@ Github => https://github.com/bmonable/term-project
 
 Pivotol => https://www.pivotaltracker.com/n/projects/1300674
   
-Heroku => https://evening-wave-6083.herokuapp.com/rooms
+Heroku => https://limitless-brook-5448.herokuapp.com/rooms
 
 == Welcome to Rails
 
