@@ -23,7 +23,7 @@ RSpec.describe RoomsController, :type => :controller do
   # This should return the minimal set of attributes required to create a valid
   # Room. As you add validations to Room, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {}
+  let(:valid_attributes) {  { "number" => "1" , "build" => "1", "date" => "1", "time" => "1" , "proctor1" => "1" , "proctor2" => "1" }}
 
   let(:invalid_attributes) {}
 
@@ -39,5 +39,6 @@ RSpec.describe RoomsController, :type => :controller do
       expect(assigns(:rooms)).to eq([room])
     end
   end
-
+ 
+  
 end

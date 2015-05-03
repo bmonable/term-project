@@ -17,7 +17,7 @@ Scenario: find room by proctor's name  (Happy path)
     
 
     When I fill in "search" with "Kiti"  
-    And I press "Search By Proctor"
+    And I press "Search"
     And I should see "c1"
     And I should not see "c2"
 
@@ -25,5 +25,5 @@ Scenario: can't find room (Sad path)
     
 
     When I fill in "search" with "Somchai"  
-    And I press "Search By Proctor"
+    And I press "Search"
     And I should see "There is no room stored on database"

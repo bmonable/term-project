@@ -28,4 +28,4 @@ Scenario: proctor table is empty (Sad path)
   Given I am on the Proctors home page
   When I follow "Proctor"
   Then I should be on the Proctor page
-  And I should not see "Edit"
+  And I should see "There is no proctor stored on"
