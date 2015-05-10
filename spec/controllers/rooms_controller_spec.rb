@@ -23,7 +23,7 @@ RSpec.describe RoomsController, :type => :controller do
   # This should return the minimal set of attributes required to create a valid
   # Room. As you add validations to Room, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {}
+  let(:valid_attributes) {  { "number" => "1" , "build" => "1", "date" => "1", "time" => "1" , "proctor1" => "1" , "proctor2" => "1" }}
 
   let(:invalid_attributes) {}
 
@@ -39,5 +39,50 @@ RSpec.describe RoomsController, :type => :controller do
       expect(assigns(:rooms)).to eq([room])
     end
   end
+  
+  describe "GET #show" do
+    it "assigns the requested room as @room" do
+      room = Room.create! valid_attributes
+      get :show, {:id => room.to_param}, valid_session
+      expect(assigns(:room)).to eq(room)
+    end
+  end
+  
+  describe "GET #edit" do
+    it "assigns the requested room as @room" do
+      room = Room.create! valid_attributes
+      get :edit, {:id => room.to_param}, valid_session
+      expect(assigns(:room)).to eq(room)
+    end
+  end
+  
+  describe "PUT #update" do
+     
+    context "with valid params" do
+      let(:new_attributes) {
+         { "number" => "2" , "build" => "2", "date" => "2", "time" => "2" , "proctor1" => "2" , "proctor2" => "2" }
+      }
 
+      it "updates the requested room" do
+        room = Room.create! valid_attributes
+        put :update, {:id => room.to_param, :room => new_attributes}, valid_session
+        room.reload
+        flash[:notice].should =~ /Room was successfully updated./i
+        
+      end
+
+      it "assigns the requested room as @room" do
+        room = Room.create! valid_attributes
+        put :update, {:id => room.to_param, :room => valid_attributes}, valid_session
+        expect(assigns(:room)).to eq(room)
+      end
+
+      it "redirects to the proctor" do
+        room = Room.create! valid_attributes
+        put :update, {:id => room.to_param, :room => valid_attributes}, valid_session
+        expect(response).to redirect_to(room)
+      end
+    end
+
+  end
 end

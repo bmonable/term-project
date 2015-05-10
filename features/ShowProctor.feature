@@ -10,9 +10,9 @@ Background: proctors have been added to database
 Scenario: show all proctor (Happy path)
     
   Given the following proctors exist:
-  | name        |   position      | tel          |    email            |
-  | Tonsak       |   Professor       | 0990490009   |  thones_aGmail.com  |
-  | migi         |  Staff      | 09813231     |  thond@gmail.com      |
+  | name        |   position      | tel          |    email            |    room_id                       |
+  | Tonsak       |   Professor       | 0990490009   |  thones_aGmail.com  | 2 |
+  | migi         |  Staff      | 09813231     |  thond@gmail.com      | 3 |
     
     Given I am on the Proctors home page
     When I follow "Proctor"
@@ -28,4 +28,4 @@ Scenario: proctor table is empty (Sad path)
   Given I am on the Proctors home page
   When I follow "Proctor"
   Then I should be on the Proctor page
-  And I should not see "Edit"
+  And I should see "There is no proctor stored on"

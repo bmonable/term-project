@@ -1,25 +1,38 @@
 %h1 Proctors
 
+
+- if @proctors.each do |proctor| 
+  - # code or partial to display the message 
+- end.empty? 
+  %br
+  %h7 There is no proctor stored on 
+
+%h2#notice= notice
 %div{class:'media'}
   
   %div{class:"media-body"}
 
 %table{class:"table table-hover"}
   %tr
+    %th Id
     %th Name
     %th Position
     %th Telephone
     %th E-mail
+    %th Room_id
+    %th
     %th
     %th
     %th
 
   - @proctors.each do |proctor|
     %tr
+      %td= proctor.id
       %td= proctor.name
       %td= proctor.position
       %td= proctor.tel
       %td= proctor.email
+      %td= proctor.room_id
       %td= link_to 'Show', proctor
       %td= link_to 'Edit', edit_proctor_path(proctor)
       %td= link_to 'Delete', proctor, :method => :delete, :data => { :confirm => 'Are you sure?' }

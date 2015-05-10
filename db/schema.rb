@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20150326162202) do
     t.string   "position"
     t.string   "tel"
     t.string   "email"
+    t.integer  "room_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

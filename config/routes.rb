@@ -5,7 +5,7 @@ TermProject::Application.routes.draw do
   get "welcome/index"
 
   get "welcome/about"
-
+ 
   resources :rooms 
   root :to => redirect('/rooms')
   

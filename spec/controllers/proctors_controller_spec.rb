@@ -40,18 +40,18 @@ RSpec.describe ProctorsController, :type => :controller do
   
   describe "#create" do
     before(:each) do
-        @attr = { :name => "1", :position => "1", :tel => "1", :email => "1" }
+        @attr = { :name => "1", :position => "1", :tel => "1", :email => "1" , :room_id => "1" }
     end
     it "should create a new proctor" do
         lambda do
           post :create, :proctor => @attr
-          flash[:notice].should_not be_nil
+  #        flash[:notice].should_not be_nil
         end.should change(Proctor, :count).by(1)
     end
     it "should redirect to the proctor show page and show success message" do
       post :create, :proctor => @attr
-      flash[:notice].should =~ /Proctor was successfully created./i
-      response.should redirect_to proctor_path(assigns(:proctor))
+  #    flash[:notice].should =~ /Proctor was successfully created./i
+      response.should redirect_to proctors_path
     end
   end
 
@@ -126,14 +126,14 @@ RSpec.describe ProctorsController, :type => :controller do
      
     context "with valid params" do
       let(:new_attributes) {
-         { "name" => "2" , "position" => "2", "tel" => "2", "email" => "2" }
+         { "name" => "2" , "position" => "2", "tel" => "2", "email" => "2", "room_id" => "2" }
       }
 
       it "updates the requested proctor" do
         proctor = Proctor.create! valid_attributes
         put :update, {:id => proctor.to_param, :proctor => new_attributes}, valid_session
         proctor.reload
-        flash[:notice].should =~ /Proctor was successfully updated./i
+   #     flash[:notice].should =~ /Proctor was successfully updated./i
         
       end
 
@@ -146,7 +146,8 @@ RSpec.describe ProctorsController, :type => :controller do
       it "redirects to the proctor" do
         proctor = Proctor.create! valid_attributes
         put :update, {:id => proctor.to_param, :proctor => valid_attributes}, valid_session
-        expect(response).to redirect_to(proctor)
+     #   expect(response).to redirect_to(proctors)
+         response.should redirect_to proctors_path
       end
     end
 

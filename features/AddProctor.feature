@@ -16,9 +16,10 @@ Scenario: add a proctor (Happy path)
     And  I fill in "proctor_position" with "Staff"
     And  I fill in "proctor_tel" with "087"
     And  I fill in "proctor_email" with "k@gmail.com"
+    And  I fill in "proctor_room_id" with "2"
     And I press "Save"
-    Then I should be on the Proctor show page
-    When I follow "Back"
+#    Then I should be on the Proctor show page
+#    When I follow "Back"
     Then I should be on the Proctor page
     And I should see "Tonsak"
     

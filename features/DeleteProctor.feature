@@ -6,8 +6,8 @@ Feature: delete proctor’s details
 Background: proctors have been added to database
 Scenario: delete a proctor (happy path)
   Given the following proctors exist:
-  | name        |   position        | tel                  |    email                       |
-  | Tonsak       |   Professor       | 0990490009   |  thones_aGmail.com  |
+  | name        |   position        | tel                  |    email                       |    room_id                       |
+  | Tonsak       |   Professor       | 0990490009   |  thones_aGmail.com  | 2 |
     Given I am on the Proctors home page
     When I follow "Proctor"
     Then I should be on the Proctor page
@@ -19,7 +19,7 @@ Scenario: delete a proctor (happy path)
 
 Scenario:  no data to delete (sad path)
     Given the following proctors exist:
-  | name        |   position      | tel          |    email            |
+  | name        |   position      | tel          |    email            | room_id |
     Given I am on the Proctors home page
     When I follow "Proctor"
     Then I should be on the Proctor page

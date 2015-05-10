@@ -8,8 +8,8 @@ Background: proctors have been added to database
   
   Given the following proctors exist:
   
-  | name        |   position      | tel          |    email            |
-  | Tonsak       |   Professor       | 0990490009   |  thones_aGmail.com  |
+  | name        |   position      | tel          |    email            |    room_id                       |
+  | Tonsak       |   Professor       | 0990490009   |  thones_aGmail.com  | 2 |
     
     Given I am on the Proctors home page
     When I follow "Proctor"
@@ -23,8 +23,8 @@ Scenario: edit a proctor (happy path)
 
     When I fill in "proctor_name" with "Ton"
     And I press "Save"
-    Then I should be on the Proctor show page
-    When I follow "Back"
+#    Then I should be on the Proctor show page
+#    When I follow "Back"
     Then I should be on the Proctor page
     And I should see "Ton"
     

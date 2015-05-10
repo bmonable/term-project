@@ -44,7 +44,8 @@ class ProctorsController < ApplicationController
 
     respond_to do |format|
       if @proctor.save
-        format.html { redirect_to @proctor, notice: 'Proctor was successfully created.' }
+      #  format.html { redirect_to action: :index, notice: 'Proctor was successfully created.' }
+        format.html { redirect_to action: :index }
         format.json { render json: @proctor, status: :created, location: @proctor }
       else
         format.html { render action: "new" }
@@ -60,7 +61,8 @@ class ProctorsController < ApplicationController
 
     respond_to do |format|
       if @proctor.update_attributes(params[:proctor])
-        format.html { redirect_to @proctor, notice: 'Proctor was successfully updated.' }
+    #    format.html { redirect_to action: :index, notice: 'Proctor was successfully updated.' }
+         format.html { redirect_to action: :index }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -80,4 +82,5 @@ class ProctorsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
 end

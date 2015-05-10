@@ -16,15 +16,15 @@ Background: rooms have been added to database
 Scenario: find room by room  (Happy path)
     
 
-    When I fill in "searchroom" with "c1"  
-    And I press "Search By Room"
+    When I fill in "search" with "c1"  
+    And I press "Search"
     And I should see "c1"
     And I should not see "c2"
 
 Scenario: can't find room (Sad path)
     
 
-    When I fill in "searchroom" with "c3"  
-    And I press "Search By Room"
+    When I fill in "search" with "c3"  
+    And I press "Search"
     And I should see "There is no room stored on database"
 

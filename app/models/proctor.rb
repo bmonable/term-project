@@ -1,5 +1,6 @@
 class Proctor < ActiveRecord::Base
-  attr_accessible :email, :name, :position, :tel
+  belongs_to :room
+  attr_accessible :email, :name, :position, :tel, :room_id
 
     validates :email, :presence => true
   validates :position, :presence => true
