@@ -17,7 +17,7 @@ Background: rooms have been added to database
     
     Given I am on the Proctors home page
 
-Scenario: find room by room  (Happy path)
+Scenario: find proctors by room  (Happy path)
     
 
     When I fill in "searchproctor" with "EN318"  

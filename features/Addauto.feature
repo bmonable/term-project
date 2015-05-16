@@ -25,7 +25,7 @@ Feature: Automatically assign rooms to proctors
     And  I fill in "proctor_email" with "k@gmail.com"
 
     
-Scenario: add a proctor (Happy path)
+Scenario: add a proctor and automatically generates rooms (Happy path)
     
     When I fill in "proctor_name" with "Tonsak yungme"
     And I press "Save"

@@ -23,7 +23,7 @@ Scenario: find room by proctor's name  (Happy path)
     And I should see "EN318"
     And I should not see "SC205"
 
-Scenario: can't find room (Sad path)
+Scenario: can't find proctor's name  (Sad path)
     
 
     When I fill in "searchproctor" with "Somchai"  

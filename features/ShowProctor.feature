@@ -7,7 +7,7 @@ Feature: Display proctor’s details
 Background: proctors have been added to database
 
 
-Scenario: show all proctor (Happy path)
+Scenario: show all proctors (Happy path)
     
     Given the following proctors exist:
     | name                  |   position        | tel          |    email            |    room_id   |
