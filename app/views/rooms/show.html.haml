@@ -6,19 +6,6 @@
 %p
   %b Build:
   = @room.build
-%p
-  %b Date:
-  = @room.date
-%p
-  %b Time:
-  = @room.time
-%p
-  %b Proctor1:
-  = @room.proctor1
-%p
-  %b Proctor2:
-  = @room.proctor2
 
-= link_to 'Edit', edit_room_path(@room)
-\|
+
 = link_to 'Back', rooms_path

@@ -5,9 +5,9 @@ TermProject::Application.routes.draw do
   get "welcome/index"
 
   get "welcome/about"
-
+ 
   resources :rooms 
-  root :to => redirect('/rooms')
+  root :to => redirect('/proctors')
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

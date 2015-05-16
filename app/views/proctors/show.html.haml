@@ -12,6 +12,18 @@
 %p
   %b E-mail:
   = @proctor.email
+%br
+%br
+%p
+  %b Room's id:
+  = @proctor.room_id
+%p
+  %b Room's number:
+  = @proctor.room.number
+%p
+  %b Building:
+  = @proctor.room.build
+ 
 
 = link_to 'Edit', edit_proctor_path(@proctor)
 \|

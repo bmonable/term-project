@@ -1,7 +1,8 @@
+- type = @Row
 = form_for @proctor do |f|
   - if @proctor.errors.any?
     #error_explanation
-      %h2= "Error"
+      %h3= "Error"
       %ul
         - @proctor.errors.full_messages.each do |msg|
           %li= msg
@@ -18,5 +19,8 @@
   .field
     = f.label :email
     = f.text_field :email
+  .field
+    = f.label :"Room's id"
+    = f.text_field :room_id, :value => type , :readonly => true
   .actions
     = f.submit 'Save'

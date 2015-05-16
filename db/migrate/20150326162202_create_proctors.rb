@@ -6,6 +6,7 @@ class CreateProctors < ActiveRecord::Migration
       t.string :position
       t.string :tel
       t.string :email
+      t.integer :room_id
 
       t.timestamps
       

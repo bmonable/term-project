@@ -1,32 +1,37 @@
-Feature: edit proctor’s details 
+Feature: edit proctors after add one or more proctor
          As a proctor manager 
-         So that I can correct proctor's details when something is wrong 
-         I want to be able to edit any proctor's details 
+         So that I can change proctors’ details and  room that proctors are in charge 
+         I want to be able to edit details and room 
 
 
-Background: proctors have been added to database
+
+    Background: proctors have been added to database
   
-  Given the following proctors exist:
-  
-  | name        |   position      | tel          |    email            |
-  | Tonsak       |   Professor       | 0990490009   |  thones_aGmail.com  |
+    Given the following proctors exist:
+    | name                  |   position        | tel          |    email            |    room_id   |
+    | Kitinan Boonyeun      |   Staff           | 0990490009   |  thones@gmail.com   |      1       |
     
+    
+    Given the following rooms exist:
+   | id | number        |   build           | 
+   | 1  | EN318         |   Engineering     | 
+   | 2  | SC205         |   SCBuilding      |
+  
     Given I am on the Proctors home page
-    When I follow "Proctor"
-    Then I should be on the Proctor page
     When I follow "Edit"
     Then I should be on the Proctor edit page
 
 Scenario: edit a proctor (happy path)
   
    
-
-    When I fill in "proctor_name" with "Ton"
+    When I fill in "proctor_name" with "Tonsak yungme"
+    And I select "SC205" from "proctor_room_id"
     And I press "Save"
     Then I should be on the Proctor show page
     When I follow "Back"
     Then I should be on the Proctor page
-    And I should see "Ton"
+    And I should see "Tonsak yungme"
+    And I should see "SC205"
     
     
 Scenario: can't edit proctor (Sad path)

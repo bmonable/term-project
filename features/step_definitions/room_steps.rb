@@ -7,10 +7,3 @@ Given /the following rooms exist/ do |rooms_table|
     # flunk "Unimplemented"
 end
 
-Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
-  #  ensure that that e1 occurs before e2.
-  #  page.body is the entire content of the page as a string.
-  body = page.html
-  assert body.index(e1) < body.index(e2)
-end
-

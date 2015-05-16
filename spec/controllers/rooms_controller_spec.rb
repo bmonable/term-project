@@ -23,7 +23,7 @@ RSpec.describe RoomsController, :type => :controller do
   # This should return the minimal set of attributes required to create a valid
   # Room. As you add validations to Room, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {}
+  let(:valid_attributes) {  { "number" => "EN318" , "build" => "Engineering" }}
 
   let(:invalid_attributes) {}
 
@@ -39,5 +39,14 @@ RSpec.describe RoomsController, :type => :controller do
       expect(assigns(:rooms)).to eq([room])
     end
   end
+  
+  describe "GET #show" do
+    it "assigns the requested room as @room" do
+      room = Room.create! valid_attributes
+      get :show, {:id => room.to_param}, valid_session
+      expect(assigns(:room)).to eq(room)
+    end
+  end
+  
 
 end

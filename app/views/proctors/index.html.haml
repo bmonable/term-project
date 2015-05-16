@@ -1,5 +1,22 @@
 %h1 Proctors
 
+
+%br  
+%h5 You can search by proctor's name or room's number
+
+%div
+  = form_tag proctors_path, method: 'get' do
+    = text_field_tag :searchproctor, params[:searchproctor]
+    = submit_tag "Search", :name => nil
+
+
+- if @proctors.each do |proctor| 
+  - # code or partial to display the message 
+- end.empty? 
+  %br
+  %h7 There is no proctor stored on database 
+
+%h2#notice= notice
 %div{class:'media'}
   
   %div{class:"media-body"}
@@ -8,8 +25,9 @@
   %tr
     %th Name
     %th Position
-    %th Telephone
-    %th E-mail
+    %th Building
+    %th Room's Number
+    %th
     %th
     %th
     %th
@@ -18,8 +36,8 @@
     %tr
       %td= proctor.name
       %td= proctor.position
-      %td= proctor.tel
-      %td= proctor.email
+      %td= proctor.room.build
+      %td= proctor.room.number
       %td= link_to 'Show', proctor
       %td= link_to 'Edit', edit_proctor_path(proctor)
       %td= link_to 'Delete', proctor, :method => :delete, :data => { :confirm => 'Are you sure?' }

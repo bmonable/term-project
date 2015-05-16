@@ -25,7 +25,9 @@ RSpec.describe ProctorsController, :type => :controller do
   # adjust the attributes here as well.
 
 
-  let(:valid_attributes) { { "name" => "1" , "position" => "1", "tel" => "1", "email" => "1" } }
+  let(:valid_attributes) { { "name" => "Kitinan Boonyuen" , "position" => "Staff", "tel" => "0829929130", "email" => "k@gmai.com", "room_id" => "1" } }
+  
+  let(:roomvalid_attributes) { { "number" => "EN318" , "build" => "Engineering" } }
 
   let(:invalid_attributes) {}
 
@@ -40,7 +42,7 @@ RSpec.describe ProctorsController, :type => :controller do
   
   describe "#create" do
     before(:each) do
-        @attr = { :name => "1", :position => "1", :tel => "1", :email => "1" }
+        @attr = { :name => "Kitinan Boonyuen", :position => "Staff", :tel => "0829929130", :email => "k@gmai.com" , :room_id => "1" }
     end
     it "should create a new proctor" do
         lambda do
@@ -51,7 +53,7 @@ RSpec.describe ProctorsController, :type => :controller do
     it "should redirect to the proctor show page and show success message" do
       post :create, :proctor => @attr
       flash[:notice].should =~ /Proctor was successfully created./i
-      response.should redirect_to proctor_path(assigns(:proctor))
+        response.should redirect_to proctor_path(assigns(:proctor))
     end
   end
 
@@ -66,13 +68,7 @@ RSpec.describe ProctorsController, :type => :controller do
   end
 
   
-#  describe "GET #index" do
-#    it "assigns all proctors as @proctors" do
-#      proctor = Proctor.create! valid_attributes
-#      get :index, {}, valid_session
-#      expect(assigns(:proctors)).to eq([proctor])
-#    end
-#  end
+
   
   describe "GET #show" do
     it "assigns the requested proctor as @proctor" do
@@ -81,22 +77,17 @@ RSpec.describe ProctorsController, :type => :controller do
       expect(assigns(:proctor)).to eq(proctor)
     end
   end
-  
 
-#  describe "GET #show" do
-#    it "assigns the requested proctor as @proctor" do
-#      proctor = Proctor.create! valid_attributes
-#      get :show, {:id => proctor.to_param}, valid_session
-#      expect(assigns(:proctor)).to eq(proctor)
-#    end
-#  end
 
   describe "GET #new" do
     it "assigns a new proctor as @proctor" do
+      proctor = Proctor.create! valid_attributes
+      room = Room.create! roomvalid_attributes
       get :new, {}, valid_session
       expect(assigns(:proctor)).to be_a_new(Proctor)
     end
   end
+  
   
   describe "GET #edit" do
     it "assigns the requested proctor as @proctor" do
@@ -126,7 +117,7 @@ RSpec.describe ProctorsController, :type => :controller do
      
     context "with valid params" do
       let(:new_attributes) {
-         { "name" => "2" , "position" => "2", "tel" => "2", "email" => "2" }
+         { "name" => "Tonsak yungme" , "position" => "Staff", "tel" => "0838920637", "email" => "T@gmail.com", "room_id" => "2" }
       }
 
       it "updates the requested proctor" do

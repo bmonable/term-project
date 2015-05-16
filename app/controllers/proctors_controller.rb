@@ -2,12 +2,12 @@ class ProctorsController < ApplicationController
   # GET /proctors
   # GET /proctors.json
   def index
-    @proctors = Proctor.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @proctors }
-    end
+  #  @proctors = Proctor.all
+    @proctors= Proctor.searchproctor(params[:searchproctor])
+  #  respond_to do |format|
+  #    format.html # index.html.erb
+  #    format.json { render json: @proctors }
+  #  end
   end
 
   # GET /proctors/1
@@ -29,6 +29,10 @@ class ProctorsController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @proctor }
+      @Room = Room.count
+      @Proctor=Proctor.count
+
+      @Row= @Proctor%@Room+1
     end
   end
 
@@ -44,11 +48,16 @@ class ProctorsController < ApplicationController
 
     respond_to do |format|
       if @proctor.save
-        format.html { redirect_to @proctor, notice: 'Proctor was successfully created.' }
+     
+       
+        format.html { redirect_to @proctor, notice: 'proctor was successfully created.' }
         format.json { render json: @proctor, status: :created, location: @proctor }
       else
         format.html { render action: "new" }
         format.json { render json: @proctor.errors, status: :unprocessable_entity }
+        @Room = Room.count
+        @Proctor=Proctor.count
+        @Row= @Proctor%@Room+1
       end
     end
   end
@@ -60,7 +69,9 @@ class ProctorsController < ApplicationController
 
     respond_to do |format|
       if @proctor.update_attributes(params[:proctor])
-        format.html { redirect_to @proctor, notice: 'Proctor was successfully updated.' }
+        format.html { redirect_to @proctor, notice: 'proctor was successfully updated.' }
+
+      
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -80,4 +91,6 @@ class ProctorsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  
 end

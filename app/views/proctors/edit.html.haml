@@ -1,7 +1,33 @@
 %h1 Editing proctor
 
-= render 'form'
+= form_for @proctor do |f|
+  - if @proctor.errors.any?
+    #error_explanation
+      %h3= "Error"
+      %ul
+        - @proctor.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :'Position'
+    = f.text_field :position
+  .field
+    = f.label :telephone
+    = f.text_field :tel
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :room_id
+    %div{class:"controls"}
+    = collection_select( :proctor, :room_id, Room.all, :id, :number,{}, { :multiple => false } )
+  .actions
+    = f.submit 'Save'
+
 
 = link_to 'Show', @proctor
-
+\|
 = link_to 'Back', proctors_path

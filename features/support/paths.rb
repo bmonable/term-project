@@ -14,13 +14,15 @@ def path_to(page_name)
     case page_name
     when /^the home\s?page$/
       '/'when /^the Proctors home page/
-        '/rooms'
+        '/proctors'
         when /^the Proctor page/
         '/proctors'
         when /^the Add proctor page/
         '/proctors/new'
         when /^the Proctor show page/
         '/proctors/1'
+         when /^the Proctor show proctor page/
+        '/proctors/2'
         when /^the Proctor edit page/
         '/proctors/1/edit'
     # Add more mappings here.

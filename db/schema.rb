@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20150326162202) do
     t.string   "position"
     t.string   "tel"
     t.string   "email"
+    t.integer  "room_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -25,10 +26,6 @@ ActiveRecord::Schema.define(:version => 20150326162202) do
   create_table "rooms", :force => true do |t|
     t.string   "number"
     t.string   "build"
-    t.string   "date"
-    t.string   "time"
-    t.string   "proctor1"
-    t.string   "proctor2"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
